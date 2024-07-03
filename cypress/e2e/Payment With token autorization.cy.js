@@ -57,7 +57,7 @@ describe('Payment with Token', () => {
       cy.log(JSON.stringify(postData));
       cy.visit(urlRedirect)
       cy.get('.text-justify').should('contain', 'Se está procesando tu solicitud, por favor no cierres, refresques la página ni regreses a la página anterior.');
-      cy.wait(5000)
+      cy.wait(6000)
     }); 
     
   })   
