@@ -1,0 +1,27 @@
+describe('Resumen', () => {
+    const userDash = Cypress.env('userDash')
+    const passDash = Cypress.env('passDash')
+    const companyDash = Cypress.env('companyDash')
+
+    it('Validar "Resumen"', () => {
+        // cy.visit(baseUrlDash+'/home')
+        cy.login(userDash,passDash);
+        cy.get('.rs-input').type(companyDash)
+        cy.get('.btn_link').click()
+        cy.get('.ttl_section').should('include.text','Resumen')
+        cy.get('.rs-picker-toggle-value').click()
+        cy.get('strong').should('include.text','Hoy')
+        cy.get('.rs-picker-toggle-value').click()
+        cy.get('[data-key="1-D"] > .rs-picker-select-menu-item').click()
+        cy.get('strong').should('include.text','Ayer')
+        cy.get('.rs-picker-toggle-value').click()
+        cy.get('[data-key="6-D"] > .rs-picker-select-menu-item').click()
+        cy.get('strong').should('include.text','Ultima semana')
+        cy.get('.rs-picker-toggle-value').click()
+        cy.get('[data-key="1-M"] > .rs-picker-select-menu-item').click()
+        cy.get('strong').should('include.text','Último mes')
+        cy.get('.rs-picker-toggle-value').click()
+        cy.get('[data-key="3-M"] > .rs-picker-select-menu-item').click()
+        cy.get('strong').should('include.text','Últimos 3 meses')
+      })
+})
