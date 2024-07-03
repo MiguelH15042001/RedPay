@@ -22,7 +22,7 @@ describe('Cancel subscription', () => {
           Cvv:"175",
           CardType:"001", //
           ReferenceNumber:randomNumber,
-          Amount:6.00,
+          Amount:1001,
           Currency:"MXN",
           FirstName:"Miguel",
           LastName:"Angel",

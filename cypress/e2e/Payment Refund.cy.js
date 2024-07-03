@@ -9,7 +9,6 @@ describe('Payment Refund', () => {
     const email = Cypress.env('email')
 
 
-    let AmountRandom = Math.floor(Math.random() * 9000) + 1000;
 
     it('Creación de la transacción', () => {
       let randomNumber = Math.floor(Math.random() * 900000) + 100000;
@@ -22,7 +21,7 @@ describe('Payment Refund', () => {
         Cvv: "175",
         CardType: "001",
         ReferenceNumber: randomNumber, 
-        Amount: AmountRandom,
+        Amount: 1001,
         Currency: "MXN",
         FirstName: "Miguel c",
         LastName: "Hernandez c",
@@ -84,7 +83,7 @@ describe('Payment Refund', () => {
     it('Hacer refund la transaction', () => {
         let RefData={
             Transactioncode : transactionCode,
-            Amount : AmountRandom
+            Amount : 1001
         }
         cy.request({
           method: 'POST',

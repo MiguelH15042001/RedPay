@@ -8,7 +8,6 @@ describe('Reversar una autorización', () => {
     const username = Cypress.env('username')
     const baseurl = Cypress.env('baseUrl')
 
-    let randomAmount = Math.floor(Math.random() * 9000) + 1000;
 
    
     it('Creación de la transacción', () => {
@@ -22,7 +21,7 @@ describe('Reversar una autorización', () => {
         Cvv: "175",
         CardType: "001",
         ReferenceNumber: randomNumber, 
-        Amount: randomAmount,
+        Amount: 1001,
         Currency: "MXN",
         FirstName: "Miguel c",
         LastName: "Hernandez c",
@@ -79,7 +78,7 @@ describe('Reversar una autorización', () => {
     it('Reversar la transaction', () => {
         let CapData={
             TransactionNumber: transactionNumber,
-            Amount: randomAmount
+            Amount: 1001
         }
 
         cy.request({

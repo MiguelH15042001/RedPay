@@ -13,7 +13,7 @@ describe('Create payment paid league', () => {
         // Datos para la solicitud POST
           let postData = {
           ReferenceNumber: randomNumber, 
-          Amount: 6,
+          Amount: 1001,
           Currency: "MXN",
           Email: email,
           PaymentProcess:{

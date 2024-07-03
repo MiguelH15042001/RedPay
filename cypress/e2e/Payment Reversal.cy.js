@@ -20,7 +20,7 @@ describe('Reversar una autorización', () => {
         Cvv: "175",
         CardType: "001",
         ReferenceNumber: randomNumber, 
-        Amount: 6,
+        Amount: 1001,
         Currency: "MXN",
         FirstName: "Miguel c",
         LastName: "Hernandez c",
@@ -94,7 +94,7 @@ describe('Reversar una autorización', () => {
 
       if(response.body.status == 'Reversed'){
         expect(response.body.transactionNumber).to.eq(transactionNumber)
-        cy.log('La transacción '+transactionNumber+' se pago con exito')
+        cy.log('La transacción '+transactionNumber+' se reembolso con exito')
       } else {
         throw new Error('El estatus de la transacción es incorrecto, es: '+response.body.status);
       }
