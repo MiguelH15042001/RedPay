@@ -1,4 +1,4 @@
-describe('Reversar una autorización', () => {
+describe('Capturar una autorización', () => {
 
     let urlRedirect;
     let transactionNumber;
