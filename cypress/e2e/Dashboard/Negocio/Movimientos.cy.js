@@ -46,34 +46,69 @@ describe('Resumen', () => {
         
        })
 
-    //    it.only('Validar barra de busqueda', () => {
-    //     cy.login(userDash,passDash);
-    //     cy.get('.rs-input').type(companyDash)
-    //     cy.get('.btn_link').first().click()
-    //     cy.get(':nth-child(1) > :nth-child(3) > a').click({force:true})
-    //     cy.get('.ttl_section').should('include.text','Movimientos')
-    //     cy.get('.rs-picker-toggle-clean').click()
-    //     cy.get('.mb-2 > .rs-btn').click()
-    //     cy.wait(3000)
+       it('Validar barra de busqueda', () => {
+        cy.login(userDash,passDash);
+        cy.get('.rs-input').type(companyDash)
+        cy.get('.btn_link').first().click()
+        cy.get(':nth-child(1) > :nth-child(3) > a').click({force:true})
+        cy.get('.ttl_section').should('include.text','Movimientos')
+        cy.get('.rs-picker-toggle-clean').click()
+        cy.get('.rs-col-md-3 > .rs-btn').click()
+        cy.wait(3000)
 
-    //     cy.get('#row-0 > [id^="cell-"] > .btn_link').first().then(element => {
-    //         // Utiliza console.log() para imprimir el elemento en la consola de Cypress
-    //         cy.log(element.text());
-    //         contenido = cy.get('#row-0 > [id^="cell-"] > .btn_link');
-    //     });
+        cy.get('#row-0 > [id^="cell-"] > .btn_link').first().then(element => {
+            // Utiliza console.log() para imprimir el elemento en la consola de Cypress
+            cy.log(element.text());
+            contenido = cy.get('#row-0 > [id^="cell-"] > .btn_link');
+        });
 
-    //     cy.get('#row-0 > [id^="cell-"] > .btn_link').first().click();
+        cy.get('#row-0 > [id^="cell-"] > .btn_link').first().click();
 
-    //     cy.get('.ttl_section').should('include.text','Detalle de la transacción')
-    //     cy.get(':nth-child(1) > :nth-child(1) > .fw-300').then(element => {
-    //         // Utiliza console.log() para imprimir el elemento en la consola de Cypress
-    //         cy.log(element.text());
-    //           });        
-    //     cy.get(':nth-child(1) > :nth-child(1) > .fw-300').should('text',contenido)
-
+        cy.get('.ttl_section').should('include.text','Detalle de la transacción')
+        cy.get(':nth-child(1) > :nth-child(1) > .fw-300')
+        .invoke('text')
+        .then(textoObtenido => {
+    // Comparar el texto obtenido con el valor esperado
+        expect(textoObtenido.trim()).to.eq('8644005'); // Ajusta '8644005' al valor esperado
+        });
                   
         
-    //     });
+        });
+
+        
+       it.only('Validar paginado', () => {
+        let firstpag;
+        let newpag;
+
+        cy.login(userDash,passDash);
+        cy.get('.rs-input').type(companyDash)
+        cy.get('.btn_link').first().click()
+        cy.get(':nth-child(1) > :nth-child(3) > a').click({force:true})
+        cy.get('.ttl_section').should('include.text','Movimientos')
+        cy.wait(2000)
+        cy.get('.mt-3')
+        .invoke('text')
+        .then(texto => {
+        firstpag = texto.trim(); // Guarda el texto obtenido en la variable
+        cy.log(firstpag); // Muestra el texto en la consola de Cypress
+        });
+        cy.get('.rs-pagination > :nth-child(5) > a').click().then(element => {
+            cy.wait(3000)
+            cy.get('.mt-3')
+            .invoke('text')
+            .then(texto => {
+              newpag = texto.trim(); // Guarda los datos después del clic
+            })
+            .then(() => {
+              // Comparar datos antes y después del clic
+              expect(firstpag).not.to.eq(newpag); // Ajusta la comparación según tus necesidades
+            });    
+
+        })
+
+          
+
+       })
 
 
 
