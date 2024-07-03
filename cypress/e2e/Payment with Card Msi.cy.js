@@ -5,7 +5,7 @@
     const password = Cypress.env('password')
     const username = Cypress.env('username')
     
-    let amountNumber = Math.floor(Math.random() * (5000 - 300)) + 300;
+    let amountNumber = Math.floor(Math.random() * (10000 - 1001 + 1)) + 1001;
     let valoresPosibles = [3, 6, 9, 12];
     let indiceAleatorio = Math.floor(Math.random() * valoresPosibles.length);
     let CantidadMsi = valoresPosibles[indiceAleatorio];

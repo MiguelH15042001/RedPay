@@ -28,7 +28,7 @@ describe('Payment with Token', () => {
 
          let postData = {
           ReferenceNumber: randomNumber, 
-          Amount: 6.00,
+          Amount: 1001.00,
           Currency: "MXN",
           Email: email,
           CustomerCardIdentifier:{

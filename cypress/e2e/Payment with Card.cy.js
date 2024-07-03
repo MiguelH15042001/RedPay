@@ -20,7 +20,7 @@ describe('Payment with Card', () => {
       Cvv: "175",
       CardType: "001",
       ReferenceNumber: randomNumber, 
-      Amount: 6,
+      Amount: 1001,
       Currency: "MXN",
       FirstName: "Miguel c",
       LastName: "Hernandez c",

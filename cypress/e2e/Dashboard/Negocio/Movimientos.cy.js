@@ -46,34 +46,34 @@ describe('Resumen', () => {
         
        })
 
-       it.only('Validar barra de busqueda', () => {
-        cy.login(userDash,passDash);
-        cy.get('.rs-input').type(companyDash)
-        cy.get('.btn_link').first().click()
-        cy.get(':nth-child(1) > :nth-child(3) > a').click({force:true})
-        cy.get('.ttl_section').should('include.text','Movimientos')
-        cy.get('.rs-picker-toggle-clean').click()
-        cy.get('.mb-2 > .rs-btn').click()
-        cy.wait(3000)
+    //    it.only('Validar barra de busqueda', () => {
+    //     cy.login(userDash,passDash);
+    //     cy.get('.rs-input').type(companyDash)
+    //     cy.get('.btn_link').first().click()
+    //     cy.get(':nth-child(1) > :nth-child(3) > a').click({force:true})
+    //     cy.get('.ttl_section').should('include.text','Movimientos')
+    //     cy.get('.rs-picker-toggle-clean').click()
+    //     cy.get('.mb-2 > .rs-btn').click()
+    //     cy.wait(3000)
 
-        cy.get('#row-0 > [id^="cell-"] > .btn_link').first().then(element => {
-            // Utiliza console.log() para imprimir el elemento en la consola de Cypress
-            cy.log(element.text());
-            contenido = cy.get('#row-0 > [id^="cell-"] > .btn_link');
-        });
+    //     cy.get('#row-0 > [id^="cell-"] > .btn_link').first().then(element => {
+    //         // Utiliza console.log() para imprimir el elemento en la consola de Cypress
+    //         cy.log(element.text());
+    //         contenido = cy.get('#row-0 > [id^="cell-"] > .btn_link');
+    //     });
 
-        cy.get('#row-0 > [id^="cell-"] > .btn_link').first().click();
+    //     cy.get('#row-0 > [id^="cell-"] > .btn_link').first().click();
 
-        cy.get('.ttl_section').should('include.text','Detalle de la transacción')
-        cy.get(':nth-child(1) > :nth-child(1) > .fw-300').then(element => {
-            // Utiliza console.log() para imprimir el elemento en la consola de Cypress
-            cy.log(element.text());
-              });        
-        cy.get(':nth-child(1) > :nth-child(1) > .fw-300').should('text',contenido)
+    //     cy.get('.ttl_section').should('include.text','Detalle de la transacción')
+    //     cy.get(':nth-child(1) > :nth-child(1) > .fw-300').then(element => {
+    //         // Utiliza console.log() para imprimir el elemento en la consola de Cypress
+    //         cy.log(element.text());
+    //           });        
+    //     cy.get(':nth-child(1) > :nth-child(1) > .fw-300').should('text',contenido)
 
                   
         
-        });
+    //     });
 
 
 

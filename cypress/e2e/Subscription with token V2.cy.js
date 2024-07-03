@@ -29,7 +29,7 @@ describe('Subscription with token V2', () => {
     let postData = {
 
         ReferenceNumber: randomNumber,
-        Amount:5.00,
+        Amount:1001.00,
         Currency:"MXN",
         Email: email,
         PaymentProcess:{
@@ -119,7 +119,7 @@ describe('Subscription with token V2', () => {
       let postData = {
   
           ReferenceNumber: randomNumber,
-          Amount:5.00,
+          Amount:1001.00,
           Currency:"MXN",
           Email: email,
           PaymentProcess:{
@@ -216,7 +216,7 @@ describe('Subscription with token V2', () => {
       let postData = {
   
         ReferenceNumber: randomNumber,
-        Amount:5.00,
+        Amount:1001.00,
         Currency:"MXN",
         Email: email,
         PaymentProcess:{
@@ -308,7 +308,7 @@ describe('Subscription with token V2', () => {
       let postData = {
   
           ReferenceNumber: randomNumber,
-          Amount:5.00,
+          Amount:1001.00,
           Currency:"MXN",
           Email: email,
           PaymentProcess:{
@@ -403,7 +403,7 @@ describe('Subscription with token V2', () => {
       let postData = {
   
           ReferenceNumber: randomNumber,
-          Amount:5.00,
+          Amount:1001.00,
           Currency:"MXN",
           Email: email,
           PaymentProcess:{

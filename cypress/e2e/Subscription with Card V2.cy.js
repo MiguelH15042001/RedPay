@@ -21,7 +21,7 @@ describe('Subscription with card V2', () => {
           Cvv:"175",
           CardType:"001", //
           ReferenceNumber:randomNumber,
-          Amount:6.00,
+          Amount:1001.00,
           Currency:"MXN",
           FirstName:"Miguel",
           LastName:"Angel",
@@ -106,7 +106,7 @@ describe('Subscription with card V2', () => {
             Cvv:"175",
             CardType:"001", //
             ReferenceNumber:randomNumber,
-            Amount:6.00,
+            Amount:1001.00,
             Currency:"MXN",
             FirstName:"Miguel",
             LastName:"Angel",
@@ -194,7 +194,7 @@ describe('Subscription with card V2', () => {
                 Cvv:"175",
                 CardType:"001", //
                 ReferenceNumber:randomNumber,
-                Amount:6.00,
+                Amount:1001.00,
                 Currency:"MXN",
                 FirstName:"Miguel",
                 LastName:"Angel",
@@ -283,7 +283,7 @@ describe('Subscription with card V2', () => {
                 Cvv:"175",
                 CardType:"001", //
                 ReferenceNumber:randomNumber,
-                Amount:6.00,
+                Amount:1001.00,
                 Currency:"MXN",
                 FirstName:"Miguel",
                 LastName:"Angel",
@@ -370,7 +370,7 @@ describe('Subscription with card V2', () => {
                 Cvv:"175",
                 CardType:"001", //
                 ReferenceNumber:randomNumber,
-                Amount:6.00,
+                Amount:1001.00,
                 Currency:"MXN",
                 FirstName:"Miguel",
                 LastName:"Angel",
