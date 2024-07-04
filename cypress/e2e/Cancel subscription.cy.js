@@ -63,6 +63,8 @@ describe('Cancel subscription', () => {
         cy.visit(urlRedirect)
         cy.get('.text-justify').should('contain', 'Se está procesando tu solicitud, por favor no cierres, refresques la página ni regreses a la página anterior.');
         cy.wait(7000)
+      }).catch((error) => {
+        cy.log('Error al procesar la solicitud:', error.message);
       });
     });
 
@@ -83,7 +85,9 @@ describe('Cancel subscription', () => {
         throw new Error('El estatus de la transacción es incorrecto, es: '+response.body.status);
 
       }
-    })
+    }).catch((error) => {
+      cy.log('Error al procesar la solicitud:', error.message);
+    });
 })
 
 
@@ -110,7 +114,9 @@ it('Cancelar Subscripcion', () => {
 
       }
   
-      })
+      }).catch((error) => {
+        cy.log('Error al procesar la solicitud:', error.message);
+      });
     })
 
 

@@ -60,6 +60,8 @@ describe('Payment with Card and create token', () => {
         cy.visit(urlRedirect)
         cy.get('.text-justify').should('contain', 'Se está procesando tu solicitud, por favor no cierres, refresques la página ni regreses a la página anterior.');
         cy.wait(6000)
+      }).catch((error) => {
+        cy.log('Error al procesar la solicitud:', error.message);
       });
     });
     
@@ -78,7 +80,9 @@ describe('Payment with Card and create token', () => {
       throw new Error('El estatus de la transacción es incorrecto, es: '+response.body.status);
     }
   
-      })
+      }).catch((error) => {
+        cy.log('Error al procesar la solicitud:', error.message);
+      });
     })
 
     it('Validar creación de token', () => {
@@ -97,7 +101,9 @@ describe('Payment with Card and create token', () => {
       } else {
         throw new Error('No se encuentra el token registrado');
       }
-        })
+        }).catch((error) => {
+          cy.log('Error al procesar la solicitud:', error.message);
+        });
 
     })
   

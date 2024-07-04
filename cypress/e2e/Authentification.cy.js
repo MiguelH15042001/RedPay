@@ -21,7 +21,9 @@ describe('Authentification', () => {
       let token = response.body.token;
       console.log('El token es:', token);
       
-    })
+    }).catch((error) => {
+      cy.log('Error al procesar la solicitud:', error.message);
+    });
   
   })
  

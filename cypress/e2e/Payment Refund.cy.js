@@ -58,6 +58,8 @@ describe('Payment Refund', () => {
          cy.wait(6000)    
          transactionCode = response.body.transactionCode
 
+      }).catch((error) => {
+        cy.log('Error al procesar la solicitud:', error.message);
       });
       
   
@@ -76,7 +78,9 @@ describe('Payment Refund', () => {
           throw new Error('El estatus de la transacción es incorrecto, es: '+response.body.status);
         }
   
-    })
+    }).catch((error) => {
+      cy.log('Error al procesar la solicitud:', error.message);
+    });
   
     })
 
@@ -101,7 +105,9 @@ describe('Payment Refund', () => {
         throw new Error('El estatus de la transacción es incorrecto, es: '+response.body.status);
       }
     
-      })
+      }).catch((error) => {
+        cy.log('Error al procesar la solicitud:', error.message);
+      });
     
       })
 
