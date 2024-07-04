@@ -66,8 +66,6 @@
         cy.visit(urlRedirect)
         cy.get('.text-justify').should('contain', 'Se está procesando tu solicitud, por favor no cierres, refresques la página ni regreses a la página anterior.'); 
         cy.wait(6000)
-      }).catch((error) => {
-        cy.log('Error al procesar la solicitud:', error.message);
       });
     });
 
@@ -91,7 +89,5 @@
       }
       
   
-      }).catch((error) => {
-        cy.log('Error al procesar la solicitud:', error.message);
-      });
+      })
     })

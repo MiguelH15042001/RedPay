@@ -68,8 +68,6 @@ describe('Create payment paid league', () => {
   cy.get('.text-justify').should('contain', 'Se está procesando tu solicitud, por favor no cierres, refresques la página ni regreses a la página anterior.');
   cy.wait(6000)
 
-    }).catch((error) => {
-      cy.log('Error al procesar la solicitud:', error.message);
     });
   });
 
@@ -87,9 +85,7 @@ describe('Create payment paid league', () => {
       
             }
             
-              }).catch((error) => {
-                cy.log('Error al procesar la solicitud:', error.message);
-              });
+              })
             
               })
 
