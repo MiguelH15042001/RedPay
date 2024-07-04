@@ -1,4 +1,4 @@
-describe('Reversar una autorización', () => {
+describe('Login incorrecto', () => {
 
     const userDash='QA_DBs';
     const passDash='Ab123456$';

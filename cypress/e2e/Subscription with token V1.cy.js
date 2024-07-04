@@ -82,7 +82,7 @@ describe('Subscription with token V1', () => {
         cy.request({
           method: 'GET',
           url: baseurl+'/api/transaction/responsemaster/'+transactionNumber,
-        }).then((response) => {
+        }).then((response)=>{
           cy.log('Datos del objeto:', JSON.stringify(response.body));
           cy.log(tomorrowF)
   
@@ -137,7 +137,7 @@ describe('Subscription with token V1', () => {
             username: username,
             password: password
           }
-        }).then((response) => {;
+        }).then((response) => {
           cy.log('Datos del objeto:', JSON.stringify(response.body));
           urlRedirect = response.body.urlRedirect;
           transactionNumber = response.body.transactionNumber;

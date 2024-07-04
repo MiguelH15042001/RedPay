@@ -1,10 +1,10 @@
-describe('Reversar una autorización', () => {
+describe('Login correcto', () => {
 
     const userDash = Cypress.env('userDash')
     const passDash = Cypress.env('passDash')
     const baseUrlDash = Cypress.env('baseUrlDash')
 
-    it('Creación de la transacción', () => {
+    it('Iniciar sesión', () => {
       cy.visit(baseUrlDash+'/login')
       cy.get('.rs-form > :nth-child(2) > .rs-form-control-wrapper > .rs-input').type(userDash)
       cy.get('.inputIcon > .rs-form-control-wrapper > .rs-input').type(passDash)
